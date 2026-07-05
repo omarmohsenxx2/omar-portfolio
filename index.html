@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omar Mohsen | Digital Growth Architect</title>
+  <meta name="description" content="Omar Mohsen portfolio: digital marketing, WordPress, Elementor, e-commerce, and brand growth systems.">
+  <style>
+    :root {
+      --bg: #0a0e17;
+      --panel: #121826;
+      --panel2: #1a2233;
+      --line: #263247;
+      --text: #eef1f7;
+      --muted: #9aa3b8;
+      --signal: #3fd6c4;
+      --gold: #e8b84b;
+      --green: #5fd13f;
+      --radius: 14px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(10, 14, 23, .94);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      font-size: 14px;
+    }
+
+    .brand-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 18px var(--signal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); border-color: var(--signal); }
+    .btn.primary { background: var(--signal); color: #06201c; border-color: var(--signal); }
+
+    .hero {
+      padding: 100px 0 80px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(63, 214, 196, .12), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(232, 184, 75, .12), transparent 30%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      border: 1px solid rgba(232, 184, 75, .35);
+      background: rgba(232, 184, 75, .06);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+
+    .status span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 8vw, 96px);
+      line-height: .96;
+      letter-spacing: -.04em;
+    }
+
+    .gradient {
+      display: block;
+      background: linear-gradient(90deg, var(--signal), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .profile-card {
+      background: linear-gradient(180deg, rgba(18, 24, 38, .95), rgba(18, 24, 38, .72));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 142px;
+      height: 142px;
+      border-radius: 50%;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--signal), var(--gold));
+      color: #081015;
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    .profile-card h2 { margin: 0; font-size: 22px; }
+    .profile-card p { margin: 8px 0 0; color: var(--muted); }
+
+    section { padding: 82px 0; border-top: 1px solid rgba(38, 50, 71, .72); }
+    .section-head { max-width: 660px; margin-bottom: 34px; }
+    .eyebrow { color: var(--signal); font-weight: 900; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
+    h2 { margin: 8px 0 0; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .two { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .card h3 { margin: 0 0 8px; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--panel2);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .timeline { display: grid; gap: 14px; }
+    .timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: 18px; }
+    .time { color: var(--signal); font-weight: 800; font-size: 14px; }
+
+    .contact-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 44px;
+      text-align: center;
+    }
+
+    .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
+    footer { padding: 28px 0; color: var(--muted); text-align: center; border-top: 1px solid var(--line); font-size: 13px; }
+
+    @media (max-width: 820px) {
+      .hero-grid, .grid, .two, .timeline-item { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { padding-top: 72px; }
+      .profile-card { text-align: left; }
+      .avatar { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#top"><span class="brand-dot"></span>OMAR.MOHSEN</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="status"><span></span>Available for freelance work</div>
+          <h1>Omar Mohsen <span class="gradient">Digital Growth Architect</span></h1>
+          <p class="lead">Digital Marketing Specialist and WordPress/Elementor Website Manager, building practical marketing and web systems for brands in Egypt and the Gulf.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">View Work</a>
+            <a class="btn" href="#contact">Get in Touch</a>
+          </div>
+        </div>
+        <aside class="profile-card">
+          <div class="avatar">OM</div>
+          <h2>Giza, Egypt</h2>
+          <p>Marketing systems, websites, e-commerce, landing pages, SEO, and paid campaigns.</p>
+        </aside>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">About</div>
+          <h2>Two sides of the same system</h2>
+        </div>
+        <div class="grid two">
+          <div class="card">
+            <h3>Marketing</h3>
+            <p>I work on Google Ads campaigns, search visibility, content planning, landing pages, and practical growth systems that connect the brand to real leads.</p>
+          </div>
+          <div class="card">
+            <h3>Web Building</h3>
+            <p>I build and manage WordPress, Elementor, Shopify, and Wix experiences that are clean, clear, easy to update, and ready for business use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Experience</div>
+          <h2>Where the work has happened</h2>
+        </div>
+        <div class="timeline">
+          <div class="card timeline-item">
+            <div class="time">2024 - Present</div>
+            <div>
+              <h3>KAS Egy-Tronix</h3>
+              <p>Marketing content, website management, product pages, ad assets, social campaigns, and technical communication for elevator control products.</p>
+            </div>
+          </div>
+          <div class="card timeline-item">
+            <div class="time">Freelance</div>
+            <div>
+              <h3>Web and Brand Projects</h3>
+              <p>Portfolio websites, online stores, landing pages, visual identity work, and campaign setups for small businesses and personal brands.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Selected Work</div>
+          <h2>Three systems, three industries</h2>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>KAS Egy-Tronix</h3>
+            <p>Product pages, technical marketing content, website sections, and social media campaigns for elevator control products.</p>
+            <div class="tag-row"><span class="tag">WordPress</span><span class="tag">SEO</span><span class="tag">Content</span></div>
+          </article>
+          <article class="card">
+            <h3>ORVELLA</h3>
+            <p>Beauty and care store workflows, offer structure, product presentation, and ad-ready content planning.</p>
+            <div class="tag-row"><span class="tag">E-commerce</span><span class="tag">Offers</span><span class="tag">Brand</span></div>
+          </article>
+          <article class="card">
+            <h3>Tuana</h3>
+            <p>Brand identity direction and digital presence thinking for a food and hospitality-style project.</p>
+            <div class="tag-row"><span class="tag">Branding</span><span class="tag">Design</span><span class="tag">Web</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Skills</div>
+          <h2>The toolkit</h2>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Web</h3>
+            <p>WordPress, Elementor, Shopify, Wix, landing pages, product pages, and website management.</p>
+          </div>
+          <div class="card">
+            <h3>Marketing</h3>
+            <p>Google Ads, Meta content, SEO, campaign planning, copywriting, conversion thinking, and analytics basics.</p>
+          </div>
+          <div class="card">
+            <h3>Creative</h3>
+            <p>Canva, CapCut, AI video prompts, product visuals, brand assets, and social media content systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div class="eyebrow">Contact</div>
+          <h2>Have a project in mind?</h2>
+          <p class="lead" style="margin-left:auto;margin-right:auto;">Whether it is a website, an online store, or a marketing system that needs fixing, let's talk.</p>
+          <div class="contact-actions">
+            <a class="btn primary" href="https://wa.me/201152014436" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" href="mailto:omarmohsen536@gmail.com">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/omar-mohsen-6445b63b0/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Built and maintained by Omar Mohsen.</div>
+  </footer>
+</body>
+</html>
